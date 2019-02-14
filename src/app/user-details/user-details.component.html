@@ -1,0 +1,50 @@
+<table style="margin-left: 44%">
+<tr>
+  <td colspan="2">
+     
+    <select2 [options]="ddlList" [settings]="{ setting: value }" [(ngModel)]="ddlModel" (onSelect)="SelectionChange($event)"></select2>
+  </td>
+</tr>
+<tr>
+  <td>
+    Current Selected Data:
+  </td>
+  <td>
+    <b>{{selectedText}}</b><br/>
+  </td>
+</tr>
+
+</table>
+<br/><br/>
+<h2  style="margin-left: 44%">UserList</h2>
+<table style="margin-left: 44%" border="1">
+  <thead>
+  <tr>
+    <td>
+      <b>UserName</b>
+
+    </td>
+    <td>
+      <b>Action</b>
+    </td>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let user of ddlList">
+    <td>
+      {{user.text}}
+    </td>
+    <td id="{{user.id}}">
+        <a style="cursor: pointer;margin-left: 40px;" (click)="SelectionChange(user)">
+           Select</a>
+     
+    </td>
+  </tr>
+</tbody>
+
+</table>
+
+
+
+ 
+
